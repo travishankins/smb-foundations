@@ -31,7 +31,9 @@ jobs:
           cache: npm
           cache-dependency-path: site/package-lock.json
       - name: Install
-        run: npm install --no-audit --no-fund
+        run: npm ci --no-audit --no-fund
+      - name: Test configuration generator
+        run: npm test
       - name: Build
         env:
           # Custom domain (azurelaunchpad.com) — site/base default to '/'
